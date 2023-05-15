@@ -138,6 +138,7 @@ class Server:
             for oneCmd in cmdArray:
                 data=oneCmd.split("#")
                 if data==None or data[0]=='':
+                    self.send_data(connect=self.connection1, data="<|ACK|>")
                     continue
                 elif cmd.CMD_BUZZER in data:
                     self.buzzer.run(data[1])
